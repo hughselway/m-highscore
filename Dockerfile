@@ -6,7 +6,7 @@ COPY vendor ./vendor
 COPY cli ./cli
 COPY internal ./internal
 
-RUN GOOS=linux go install ./cli/server
+RUN CGO_ENABLED=0 GOOS=linux go install ./cli/server
 
 #2nd Stage
 
